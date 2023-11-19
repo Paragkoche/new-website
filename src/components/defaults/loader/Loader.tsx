@@ -15,6 +15,7 @@ const Loader = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
+      window.scrollTo(0, 0);
     }, 2500);
   }, []);
 
