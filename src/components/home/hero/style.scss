@@ -30,6 +30,8 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      position: relative;
+      z-index: 3;
 
       p {
         color: $light;
@@ -43,6 +45,7 @@
       width: 100%;
       aspect-ratio: 618/368.76;
       margin-top: -35px;
+      z-index: 2;
     }
 
     .programing-languages {
@@ -59,111 +62,146 @@
 
         .language-container {
           background-color: $offDark;
-          height: 40px;
+          height: 35px;
           display: grid;
           place-content: center;
-          padding: 0 15px;
+          padding: 5px 15px;
           border-radius: $borderS;
           width: fit-content;
           margin-right: 5px;
+
+          svg {
+            min-width: 60px;
+            max-width: 60px !important;
+            max-height: 20px;
+          }
         }
       }
     }
   }
 }
 
-//*------------> desktop hero
+//*------------> tablet hero
 
 @media screen and (min-width: 820px) {
   #hero {
     width: 100vw;
-    padding: 0 8vw;
-    margin-bottom: 8vw;
-
-    .bg-container {
-      padding: 2vw;
-      position: relative;
-
-      .bg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 500px;
-        background-color: $dark;
-      }
-    }
+    padding: 10px;
+    margin-top: -100px;
 
     .hero-main {
+      padding: 150px 4vw 100px 4vw;
       width: 100%;
-      //background-color: $blue;
-      position: relative;
-      z-index: 3;
-      line-height: 1;
-      padding-top: 80px;
-      display: flex;
-      flex-direction: column;
-      gap: 4vw;
+      background-color: $dark;
+      border-radius: $borderM;
 
-      p {
-        font-weight: bold;
-        color: $pink;
-        font-size: 1.2vw;
-      }
-
-      h3 {
-        font-weight: 300;
-        font-size: 8vw;
-      }
-
-      .hero-info {
-        width: 80%;
+      .hero-text {
+        line-height: 1;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 50px;
+        position: relative;
+        z-index: 2;
 
         p {
-          width: 440px;
-          color: $light;
+          font-weight: bold;
+          color: $pink;
           font-size: 1.2vw;
-          line-height: 1.2;
-          font-weight: 500;
         }
 
-        button {
-          align-self: flex-end;
+        h3 {
+          font-weight: 300;
+          font-size: 8vw;
+          line-height: 1;
+        }
+
+        .hero-info {
+          width: 80%;
+          display: flex;
+          justify-content: space-between;
+
+          p {
+            width: 350px;
+            color: $light;
+            font-size: 1.6vw;
+            line-height: 1.2;
+            font-weight: 400;
+          }
+
+          button {
+            align-self: flex-end;
+          }
+        }
+      }
+
+      .img-container {
+        width: 100%;
+        aspect-ratio: 605/211;
+        position: relative;
+        margin-top: -20px;
+        z-index: 1;
+
+        .programing-languages {
+          width: 53vw;
+          border-radius: $borderS;
+          overflow: hidden;
+          position: absolute;
+          bottom: 10px;
+          right: 0;
+
+          .icons {
+            display: flex;
+
+            .language-container {
+              background-color: $offDark;
+              height: 30px;
+              display: grid;
+              place-content: center;
+              padding: 0 15px;
+              border-radius: $borderS;
+              width: fit-content;
+              margin-right: 20px;
+
+              svg {
+                min-width: 60px;
+                max-width: 80px !important;
+                max-height: 20px;
+              }
+            }
+          }
         }
       }
     }
+  }
+}
 
-    .img-container {
-      width: 100%;
-      aspect-ratio: 605/211;
-      position: relative;
-      top: -1.2vw;
-      z-index: 2;
+//*---------->> desktop
 
-      .programing-languages {
-        position: absolute;
-        //background-color: $blue;
-        z-index: 3;
-        right: 0;
-        bottom: 20px;
-        width: 49vw;
-        border-radius: $borderS;
-        overflow: hidden;
+@media screen and (min-width: 1025px) {
+  #hero {
+    .hero-main {
+      .hero-text {
+        .hero-info {
+          p {
+            width: 420px;
+            font-size: 1.2vw;
+          }
+        }
+      }
+      .img-container {
+        .programing-languages {
+          bottom: 26px;
 
-        .icons {
-          display: flex;
+          .icons {
+            .language-container {
+              height: 40px;
 
-          .language-container {
-            background-color: $offDark;
-            height: 40px;
-            display: grid;
-            place-content: center;
-            padding: 0 15px;
-            border-radius: $borderS;
-            width: fit-content;
-            margin-right: 20px;
+              svg {
+                min-width: 80px;
+                max-width: 100px !important;
+                max-height: 20px;
+              }
+            }
           }
         }
       }

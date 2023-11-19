@@ -8,6 +8,11 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { dropdownMenu } from "@/src/utils/anim";
 import { links } from "./db";
+import NavBg from "./svg/NavBg";
+import Image from "next/image";
+
+const menuImg =
+  "https://images.unsplash.com/photo-1601925165391-e5d6552a4e20?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 const Header = () => {
   const menuRef = useRef<HTMLDivElement>(null);
@@ -68,6 +73,13 @@ const Header = () => {
               >
                 <div className="heading">
                   <p>Menu</p>
+                  <Image
+                    src={menuImg}
+                    alt="menuimg"
+                    fill
+                    sizes="(max-width: 768px) 600px, (max-width: 1200px) 1000px, 2000px"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="links">
                   {links.map((link, i) => (
@@ -93,6 +105,7 @@ const Header = () => {
               </Link>
             ))}
           </div>
+          <NavBg />
         </div>
       )}
     </header>
