@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@/src/scss/globals.scss";
+import ThemeProvider from "@/src/backend/ui/provider/themeProvider";
 
 export const metadata: Metadata = {
   title: "Webstack | admin",
@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
