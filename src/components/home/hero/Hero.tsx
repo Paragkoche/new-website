@@ -1,7 +1,6 @@
 "use client";
 
 import "./style.scss";
-import Background from "./Background";
 import { useMediaQuery } from "react-responsive";
 import Button from "@/src/components/defaults/buttons/Button";
 import Image from "next/image";
@@ -59,6 +58,9 @@ const Hero = (props: HomeProps) => {
         </div>
       ) : (
         <>
+          <div className="bg-container">
+            <div className="bg"></div>
+          </div>
           <div className="hero-main">
             <p>
               {props.upper_sub_text ||
