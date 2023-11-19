@@ -2,7 +2,7 @@
 
 #defaultButton {
   width: fit-content;
-  $size: 40px;
+  $size: 30px;
   $svg: 10px;
   display: flex;
   cursor: pointer;
@@ -41,6 +41,7 @@
     height: $size;
     padding: 0 20px;
     color: $light;
+    font-size: 0.8rem;
   }
 
   &:hover {
@@ -66,9 +67,50 @@
   }
 }
 
-//*---------->> Tablet & desktop
+//*---------->> Tablet
 
 @media screen and (min-width: 820px) {
+  #defaultButton {
+    $size: 40px;
+    $svg: 15px;
+
+    .arrow {
+      width: $size;
+      height: $size;
+      border-radius: $borderS;
+
+      svg {
+        width: $svg;
+        height: $svg;
+      }
+    }
+
+    .title {
+      padding: 0 30px;
+      height: $size;
+      border-radius: $borderS;
+      font-size: 1rem;
+    }
+
+    .arrow-hover {
+      width: 0px;
+
+      svg {
+        transform: translate(-50px, 50px);
+      }
+    }
+
+    &:hover {
+      .arrow-hover {
+        width: $size;
+      }
+    }
+  }
+}
+
+//*---------->> desktop
+
+@media screen and (min-width: 1025px) {
   #defaultButton {
     $size: 50px;
     $svg: 15px;
@@ -88,6 +130,7 @@
       padding: 0 40px;
       height: $size;
       border-radius: $borderM;
+      font-size: 1.2rem;
     }
 
     .arrow-hover {

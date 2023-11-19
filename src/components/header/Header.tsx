@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { dropdownMenu } from "@/src/utils/anim";
 import { links } from "./db";
+import NavBg from "./svg/NavBg";
 
 const Header = () => {
   const menuRef = useRef<HTMLDivElement>(null);
@@ -93,6 +94,7 @@ const Header = () => {
               </Link>
             ))}
           </div>
+          <NavBg />
         </div>
       )}
     </header>

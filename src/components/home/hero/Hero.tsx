@@ -58,46 +58,46 @@ const Hero = (props: HomeProps) => {
         </div>
       ) : (
         <>
-          <div className="bg-container">
-            <div className="bg"></div>
-          </div>
           <div className="hero-main">
-            <p>
-              {props.upper_sub_text ||
-                "Unleash your imagination and join us on this journey."}
-            </p>
-            <h3
-              dangerouslySetInnerHTML={{
-                __html:
-                  props.main_text ||
-                  "Where Imagination \
+            <div className="hero-text">
+              <p>
+                {props.upper_sub_text ||
+                  "Unleash your imagination and join us on this journey."}
+              </p>
+              <h3
+                dangerouslySetInnerHTML={{
+                  __html:
+                    props.main_text ||
+                    "Where Imagination \
               <br /> \
               Meets Innovation",
-              }}
-            ></h3>
-            <div className="hero-info">
-              <p>
-                {props.sub_text ||
-                  `At Webstack, we're more than just a web design and development
+                }}
+              ></h3>
+              <div className="hero-info">
+                <p>
+                  {props.sub_text ||
+                    `At Webstack, we're more than just a web design and development
                 agency; we're digital storytellers. Dive into the world of
                 limitless possibilities where we craft digital experiences that
                 leave a lasting impression.`}
-              </p>
-              <Button>{props.button_text || "Learn More"}</Button>
+                </p>
+                <Button>{props.button_text || "Learn More"}</Button>
+              </div>
             </div>
-          </div>
-          <div className="img-container">
-            <Image
-              src={heroImg}
-              alt="hero image"
-              fill
-              sizes="(max-width: 768px) 600px, (max-width: 1200px) 1000px, 2000px"
-            />
-            <div className="programming-languages">
-              <Marquee pauseOnHover={true}>
-                <Icons />
-                <Icons />
-              </Marquee>
+            <div className="img-container">
+              <Image
+                src={heroImg}
+                alt="hero image"
+                fill
+                sizes="(max-width: 768px) 600px, (max-width: 1200px) 1000px, 2000px"
+              />
+
+              <div className="programing-languages">
+                <Marquee pauseOnHover={true}>
+                  <Icons />
+                  <Icons />
+                </Marquee>
+              </div>
             </div>
           </div>
         </>

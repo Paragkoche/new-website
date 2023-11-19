@@ -1,12 +1,6 @@
 const NextJs = () => {
   return (
-    <svg
-      width="56"
-      height="12"
-      viewBox="0 0 56 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 56 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_5_181)">
         <path
           d="M37.2271 0.00747681H46.9813V1.93078H43.1119V12.049H41.1771V1.93078H37.2271V0.00747681Z"
