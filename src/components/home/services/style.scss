@@ -1,0 +1,42 @@
+@use "@/src/scss/variables" as *;
+
+#services {
+  .services-mobile {
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h3 {
+      font-weight: 400;
+      color: $pink;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1.6rem;
+    }
+
+    .card {
+      background-color: $pista;
+      border-radius: $borderS;
+      padding: 4vw;
+      color: $dark;
+
+      .title {
+        border-bottom: 1px solid $dark;
+        padding-bottom: 2vw;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      ul {
+        padding: 4vw 0 0 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

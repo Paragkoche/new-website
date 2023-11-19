@@ -1,0 +1,125 @@
+@use "@/src/scss/variables" as *;
+
+#header {
+  width: 100vw;
+  height: 80px;
+  padding: 2vw;
+  position: relative;
+  z-index: 99;
+
+  .mobile-header {
+    width: 100%;
+    height: 100%;
+    background-color: $dark;
+    border-radius: $borderS;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4vw;
+
+    svg {
+      width: 40px;
+    }
+
+    button {
+      background-color: $offDark;
+      color: $light;
+      width: 60px;
+      height: 30px;
+      display: grid;
+      place-content: center;
+      font-size: 0.8rem;
+      border-radius: $borderS;
+    }
+
+    .open {
+      background-color: $blue;
+    }
+  }
+
+  .menu-open {
+    position: absolute;
+    height: 50vh;
+    top: 80px;
+    background-color: $dark;
+    border-radius: $borderS;
+    width: calc(100% - 4vw);
+    padding: 4vw;
+    gap: 2vw;
+    overflow: hidden;
+
+    .heading {
+      background-color: $offDark;
+      border-radius: $borderS;
+      height: 50%;
+      padding: 20px;
+      display: flex;
+      align-items: flex-end;
+
+      p {
+        font-size: 2rem;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+      height: 50%;
+      gap: 10%;
+      padding-top: 4vw;
+
+      a {
+        width: 100%;
+        height: 30%;
+        background-color: $offDark;
+        border-radius: $borderS;
+        display: flex;
+        align-items: center;
+        padding: 0 4vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 820px) {
+  #header {
+    width: 100vw;
+    padding: 0 10vw 0 4vw;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    .desktop-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        svg {
+          width: 60px;
+        }
+      }
+
+      .brand {
+        font-size: 1.4rem;
+      }
+
+      .links {
+        width: 20vw;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+          transition: all 300ms $easing;
+          &:hover {
+            color: $blue;
+            transition: all 100ms $easing;
+          }
+        }
+      }
+    }
+  }
+}

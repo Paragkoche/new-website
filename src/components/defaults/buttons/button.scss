@@ -1,0 +1,107 @@
+@use "@/src/scss/variables" as *;
+
+#defaultButton {
+  width: fit-content;
+  $size: 40px;
+  $svg: 10px;
+  display: flex;
+  cursor: pointer;
+
+  .arrow {
+    width: $size;
+    height: $size;
+    background-color: $pink;
+    border-radius: $borderS;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    transition: all 100ms $easing;
+
+    svg {
+      width: $svg;
+      height: $svg;
+      transition: all 100ms 100ms $easing;
+    }
+  }
+
+  .arrow-hover {
+    width: 0px;
+    opacity: 0;
+
+    svg {
+      transform: translate(-50px, 50px);
+    }
+  }
+
+  .title {
+    background-color: $blue;
+    border-radius: $borderS;
+    display: grid;
+    place-items: center;
+    height: $size;
+    padding: 0 20px;
+    color: $light;
+  }
+
+  &:hover {
+    .arrow {
+      width: 0px;
+      opacity: 0;
+      transition: all 200ms $easing;
+
+      svg {
+        transform: translate(-50px, 50px);
+        transition: all 100ms 100ms $easing;
+      }
+    }
+
+    .arrow-hover {
+      width: $size;
+      opacity: 1;
+
+      svg {
+        transform: translate(0px, 0px);
+      }
+    }
+  }
+}
+
+//*---------->> Tablet & desktop
+
+@media screen and (min-width: 820px) {
+  #defaultButton {
+    $size: 50px;
+    $svg: 15px;
+
+    .arrow {
+      width: $size;
+      height: $size;
+      border-radius: $borderM;
+
+      svg {
+        width: $svg;
+        height: $svg;
+      }
+    }
+
+    .title {
+      padding: 0 40px;
+      height: $size;
+      border-radius: $borderM;
+    }
+
+    .arrow-hover {
+      width: 0px;
+
+      svg {
+        transform: translate(-50px, 50px);
+      }
+    }
+
+    &:hover {
+      .arrow-hover {
+        width: $size;
+      }
+    }
+  }
+}

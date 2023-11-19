@@ -1,0 +1,140 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// home pages
+model Home {
+  id String @id @default(uuid())
+
+  Home_Hero_setion       Home_Hero_setion?
+  Home_services_section  Home_services_section?
+  Home_project_section   Home_project_section?
+  home_why_webstack      home_why_webstack?
+  client_reviwes_section client_reviwes_section?
+}
+
+model Home_Hero_setion {
+  id             String @id @default(uuid())
+  main_text      String
+  sub_text       String
+  upper_sub_text String
+  image          String
+  button_text    String
+  button_url     String
+
+  programing_laguage_slider Home_sliding_programming_laguages[]
+  Home                      Home                                @relation(fields: [homeId], references: [id])
+  homeId                    String                              @unique
+}
+
+model Home_sliding_programming_laguages {
+  id   String @id @default(uuid())
+  icon String
+  name String
+
+  Home_Hero_setion   Home_Hero_setion? @relation(fields: [home_Hero_setionId], references: [id])
+  home_Hero_setionId String?
+}
+
+model Home_services_section {
+  id          String                 @id @default(uuid())
+  header_text String
+  boxs        services_section_box[]
+  Home        Home                   @relation(fields: [homeId], references: [id])
+  homeId      String                 @unique
+}
+
+model services_section_box {
+  id                      String                 @id @default(uuid())
+  heading                 String
+  text                    String
+  Home_services_section   Home_services_section? @relation(fields: [home_services_sectionId], references: [id])
+  home_services_sectionId String?
+}
+
+model Home_project_section {
+  id       String    @id @default(uuid())
+  projects project[]
+
+  Home   Home   @relation(fields: [homeId], references: [id])
+  homeId String @unique
+}
+
+model project {
+  id                     String                @id @default(uuid())
+  heading                String
+  dec                    String
+  image                  String
+  url                    String
+  Home_project_section   Home_project_section? @relation(fields: [home_project_sectionId], references: [id])
+  home_project_sectionId String?
+}
+
+model home_why_webstack {
+  id          String                       @id @default(uuid())
+  button_text String
+  button_url  String
+  statment    home_why_webstack_statment[]
+  Home        Home                         @relation(fields: [homeId], references: [id])
+  homeId      String                       @unique
+}
+
+model home_why_webstack_statment {
+  id                  String             @id @default(uuid())
+  heading             String
+  dec                 String
+  home_why_webstack   home_why_webstack? @relation(fields: [home_why_webstackId], references: [id])
+  home_why_webstackId String?
+}
+
+model client_reviwes_section {
+  id          String          @id @default(uuid())
+  title       String
+  sub_title   String
+  upper_title String
+  reviwes     client_reviwe[]
+  Home        Home            @relation(fields: [homeId], references: [id])
+  homeId      String          @unique
+}
+
+model client_reviwe {
+  id                       String                  @id @default(uuid())
+  review                   String
+  name_of_client           String
+  image_of_client          String
+  post_of_client           String
+  project_of_client        String
+  client_reviwes_section   client_reviwes_section? @relation(fields: [client_reviwes_sectionId], references: [id])
+  client_reviwes_sectionId String?
+}
+
+//Home Page End
+
+//nav-bar
+
+model nav_bar {
+  id   String      @id @default(uuid())
+  logo String
+  manu nav_links[]
+}
+
+model nav_links {
+  id        String   @id @default(uuid())
+  text      String
+  link      String
+  nav_bar   nav_bar? @relation(fields: [nav_barId], references: [id])
+  nav_barId String?
+}
+
+//nav-bar
+
+// fotter
+// fotter - end 

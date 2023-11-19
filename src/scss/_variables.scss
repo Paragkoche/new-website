@@ -1,0 +1,52 @@
+//*---------------------> fonts import
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+//*------------> font variables
+
+$roboto: "Roboto", sans-serif;
+
+//*------------> color variables
+
+$light: #f3efef;
+$dark: #141414;
+$offDark: #222;
+$blue: #265bff;
+$pista: #c3d9c3;
+$pink: #d6a3e4;
+
+//*------------> other variables
+$borderL: 40px;
+$borderM: 20px;
+$borderS: 10px;
+$easing: cubic-bezier(0.76, 0, 0.24, 1);
+
+// * ----------------> break-points
+/*
+xs, extra-small: 0px
+sm, small: 600px
+md, medium: 900px
+lg, large: 1200px
+xl, extra-large: 1536px
+*/
+
+/*
+
+border-radius: 20px;
+
+*/
+
+// * -----FUNCTIONS ------------->
+
+@mixin display-flex(
+  $gap: 0px,
+  $direction: row,
+  $justify: center,
+  $algin: center
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $algin;
+  justify-content: $justify;
+  gap: $gap;
+}

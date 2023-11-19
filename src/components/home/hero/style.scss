@@ -1,0 +1,158 @@
+@use "@/src/scss/variables" as *;
+
+//*------------> mobile hero
+
+#hero {
+  width: 100vw;
+  padding: 0 2vw;
+
+  .mobile-main {
+    background-color: $dark;
+    width: 100%;
+    border-radius: $borderS;
+    padding: 8vw 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+      font-weight: bold;
+      color: $pink;
+      font-size: 0.8rem;
+    }
+
+    h3 {
+      font-weight: 300;
+      font-size: 2.2rem;
+    }
+
+    .hero-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      p {
+        color: $light;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+    }
+
+    .img-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 618/368.76;
+      margin-top: -35px;
+    }
+
+    .programing-languages {
+      position: relative;
+      z-index: 3;
+      right: 0;
+      bottom: 20px;
+      border-radius: $borderS;
+      overflow: hidden;
+      top: 2px;
+
+      .icons {
+        display: flex;
+
+        .language-container {
+          background-color: $offDark;
+          height: 40px;
+          display: grid;
+          place-content: center;
+          padding: 0 15px;
+          border-radius: $borderS;
+          width: fit-content;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+//*------------> desktop hero
+
+@media screen and (min-width: 820px) {
+  #hero {
+    width: 100vw;
+    padding: 0 8vw;
+    margin-bottom: 8vw;
+
+    .hero-main {
+      width: 100%;
+      //background-color: $blue;
+      position: relative;
+      z-index: 3;
+      line-height: 1;
+      padding-top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 4vw;
+
+      p {
+        font-weight: bold;
+        color: $pink;
+        font-size: 1.2vw;
+      }
+
+      h3 {
+        font-weight: 300;
+        font-size: 8vw;
+      }
+
+      .hero-info {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          width: 440px;
+          color: $light;
+          font-size: 1.2vw;
+          line-height: 1.2;
+          font-weight: 500;
+        }
+
+        button {
+          align-self: flex-end;
+        }
+      }
+    }
+
+    .img-container {
+      width: 100%;
+      aspect-ratio: 605/211;
+      position: relative;
+      top: -1.2vw;
+      z-index: 2;
+
+      .programing-languages {
+        position: absolute;
+        //background-color: $blue;
+        z-index: 3;
+        right: 0;
+        bottom: 20px;
+        width: 49vw;
+        border-radius: $borderS;
+        overflow: hidden;
+
+        .icons {
+          display: flex;
+
+          .language-container {
+            background-color: $offDark;
+            height: 40px;
+            display: grid;
+            place-content: center;
+            padding: 0 15px;
+            border-radius: $borderS;
+            width: fit-content;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
