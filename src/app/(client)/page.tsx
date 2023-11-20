@@ -5,7 +5,7 @@ import Loader from "../../components/defaults/loader/Loader";
 
 export default async function Home() {
   const data = await getHomeData();
-  console.log(data);
+  //console.log(data);
 
   return (
     <>

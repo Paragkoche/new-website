@@ -3,6 +3,8 @@
 import { useMediaQuery } from "react-responsive";
 import { cards } from "./db";
 import "./style.scss";
+import ServicesSvg from "./svg/ServicesSvg";
+import ServicesBg from "./svg/ServicesBg";
 
 const Services = () => {
   const isMobile = useMediaQuery({ maxWidth: 820 });
@@ -31,7 +33,30 @@ const Services = () => {
         </div>
       ) : (
         <div className="services-desktop">
-          <h3>services</h3>
+          <div className="title-container">
+            <ServicesSvg />
+            <h3>services</h3>
+          </div>
+          <p>
+            We're not just building websites, we're creating digital
+            masterpieces.
+          </p>
+          <div className="cards-container">
+            {cards.map((card, index) => (
+              <div className="card" key={index}>
+                <div className="title">
+                  <h4>{card.title}</h4>
+                  <ul>
+                    {card.list.map((item, i) => (
+                      <li key={i}>{item.item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <ServicesBg />
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </section>

@@ -53,6 +53,7 @@ const Hero = (props: HomeProps) => {
           <div className="programing-languages">
             <Marquee>
               <Icons />
+              <Icons />
             </Marquee>
           </div>
         </div>
