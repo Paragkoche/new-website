@@ -33,15 +33,15 @@ export const loading = {
 //*----------> Menu
 
 export const dropdownMenu = {
-  initial: { height: "0px", padding: "0 4vw" },
+  initial: { height: "0", padding: "0 4vw" },
   enter: {
-    height: "50vh",
+    height: "calc(85vh - 80px - 10px)",
     padding: "4vw",
 
     transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
   },
   exit: {
-    height: "0px ",
+    height: "0",
     padding: "0 4vw",
 
     transition: { duration: 0.2, ease: [0.76, 0, 0.24, 1] },

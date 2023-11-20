@@ -22,6 +22,8 @@ const Header = () => {
 
   const [isMenuOpen, setMenuOpen] = useState(false);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const menuButtonClick = () => {
     setMenuOpen(!isMenuOpen);
   };
@@ -43,11 +45,40 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setIsScrolled(isScrolled);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const disableScroll = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollLeft = window.scrollY || document.documentElement.scrollLeft;
+
+    window.onscroll = function () {
+      window.scrollTo(scrollLeft, scrollTop);
+    };
+  };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      disableScroll();
+    } else {
+      window.onscroll = function () {};
+    }
+  }, [isMenuOpen]);
+
   return (
     <header id="header">
       {isMobile ? (
         <>
-          <div className="mobile-header">
+          <div className={`mobile-header ${isScrolled ? "scrollDown" : ""}`}>
             <Link href="/">
               <Logo />
             </Link>
@@ -83,7 +114,14 @@ const Header = () => {
                 </div>
                 <div className="links">
                   {links.map((link, i) => (
-                    <Link href={link.link}>{link.title}</Link>
+                    <Link
+                      onClick={() => {
+                        setMenuOpen(false);
+                      }}
+                      href={link.link}
+                    >
+                      {link.title}
+                    </Link>
                   ))}
                 </div>
               </motion.div>
