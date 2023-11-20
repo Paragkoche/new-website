@@ -6,6 +6,8 @@
   padding: 2vw;
   position: relative;
   z-index: 99;
+  position: fixed;
+  top: 0;
 
   .mobile-header {
     width: 100%;
@@ -107,6 +109,7 @@
     height: 100px;
     display: flex;
     align-items: center;
+    position: relative;
 
     .desktop-header {
       width: 100%;
