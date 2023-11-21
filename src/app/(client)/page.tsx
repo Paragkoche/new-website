@@ -1,7 +1,8 @@
 import { getHomeData } from "@/src/backend";
-import Hero from "../../components/home/hero/Hero";
-import Services from "../../components/home/services/Services";
-import Loader from "../../components/defaults/loader/Loader";
+import Hero from "@/src/components/home/hero/Hero";
+import Services from "@/src/components/home/services/Services";
+import Loader from "@/src/components/defaults/loader/Loader";
+import Projects from "@/src/components/home/projects/Projects";
 
 export default async function Home() {
   const data = await getHomeData();
@@ -12,6 +13,7 @@ export default async function Home() {
       <Loader />
       <Hero {...data?.Home_Hero_setion} />
       <Services />
+      <Projects />
     </>
   );
 }

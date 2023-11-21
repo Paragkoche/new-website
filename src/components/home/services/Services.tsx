@@ -52,7 +52,6 @@ const Services = () => {
                     ))}
                   </ul>
                 </div>
-
                 <ServicesBg />
               </div>
             ))}

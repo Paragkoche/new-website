@@ -1,0 +1,129 @@
+@use "@/src/scss/variables" as *;
+
+//*------------> tablet
+
+@media screen and (min-width: 820px) {
+  #projects {
+    display: flex;
+    justify-content: center;
+    padding: 80px 4vw;
+
+    .svg-container {
+      .title-container {
+        margin-left: 4vw;
+        width: 153px;
+        height: 40px;
+        position: relative;
+        display: grid;
+        place-content: center;
+
+        h3 {
+          position: relative;
+          z-index: 2;
+        }
+
+        svg {
+          position: absolute;
+        }
+      }
+      svg {
+        fill: $dark;
+      }
+    }
+
+    .data-main {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      .data-container {
+        position: relative;
+
+        .data {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 100%;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 4vw 0 6vw;
+
+          .text-container {
+            display: flex;
+            gap: 30%;
+
+            .srno {
+              font-size: 2rem;
+              font-weight: 300;
+            }
+
+            .info {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              width: 30%;
+
+              h4 {
+                font-size: 1.4rem;
+                font-weight: 300;
+                width: 150px;
+              }
+
+              p {
+                font-size: 0.4rem;
+                font-weight: 300;
+                line-height: 1.4;
+              }
+
+              button {
+                margin-top: 20px;
+              }
+            }
+          }
+
+          .img-container {
+            position: relative;
+            width: 50vw;
+            aspect-ratio: 1232/618;
+          }
+        }
+      }
+    }
+  }
+}
+
+//*---------->> desktop
+
+@media screen and (min-width: 1025px) {
+  #projects {
+    .data-main {
+      .data-container {
+        .data {
+          .text-container {
+            .srno {
+              font-size: 3.4rem;
+            }
+
+            .info {
+              width: 45%;
+              h4 {
+                font-size: 2.4rem;
+                width: 200px;
+              }
+
+              p {
+                font-size: 0.8rem;
+              }
+            }
+          }
+
+          .img-container {
+            width: 65vw;
+          }
+        }
+      }
+    }
+  }
+}
