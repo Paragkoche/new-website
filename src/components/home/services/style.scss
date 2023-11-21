@@ -141,7 +141,9 @@
       }
 
       .cards-container {
+        align-items: center;
         .card {
+          width: fit-content;
           display: flex;
           justify-content: center;
 

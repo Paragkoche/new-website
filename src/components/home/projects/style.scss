@@ -1,5 +1,119 @@
 @use "@/src/scss/variables" as *;
 
+#projects {
+  margin: 0 4vw 4vw 4vw;
+
+  .projects-mobile {
+    background-color: $dark;
+    border-radius: $borderS;
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 100%;
+
+    h3 {
+      font-weight: 400;
+      color: $pink;
+    }
+
+    .mySwiper {
+      width: 100%;
+      height: 450px;
+      position: relative;
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        color: $pista;
+        opacity: 0.75;
+
+        &::after {
+          display: grid;
+          place-content: center;
+          position: absolute;
+          font-size: 1rem;
+          font-weight: bold;
+
+          top: 225px;
+        }
+      }
+
+      .swiper-button-prev {
+        &::after {
+          left: 240px;
+        }
+      }
+
+      .swiper-button-next {
+        &::after {
+          left: 20px;
+        }
+      }
+
+      .swiper-button-disabled {
+        color: $blue;
+        opacity: 0.5;
+      }
+
+      .swiper-slide-prev {
+        opacity: 0 !important;
+      }
+
+      .swiper-slide-next {
+        opacity: 0 !important;
+      }
+
+      .swiperSlide-card {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: space-between;
+        height: 100%;
+
+        &:nth-of-type(1) {
+          border: none;
+          padding: 0;
+        }
+
+        .srno {
+          font-size: 1.8rem;
+          color: $pista;
+        }
+
+        h4 {
+          font-size: 2rem;
+          font-weight: 300;
+          padding-right: 30%;
+        }
+
+        p {
+          font-size: 0.8rem;
+          font-weight: 300;
+          line-height: 1.4;
+          padding-right: 5%;
+        }
+
+        .image-main {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
+          .img-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1232/618;
+          }
+
+          a {
+            width: fit-content;
+          }
+        }
+      }
+    }
+  }
+}
+
 //*------------> tablet
 
 @media screen and (min-width: 820px) {
