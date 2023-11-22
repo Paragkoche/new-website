@@ -86,10 +86,9 @@ const Projects = () => {
             <h3>projects</h3>
           </div>
           <div className="data-main">
-            {projects.map((project, index) => (
+            {/* {projects.map((project, index) => (
               <div key={index} className="data-container">
                 <ProjectsBgSvg />
-
                 <div className="data">
                   <div className="text-container">
                     <p className="srno">{project.srno}</p>
@@ -112,7 +111,46 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
+            <Swiper
+              effect={"fade"}
+              navigation={true}
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+                //pauseOnMouseEnter: true,
+              }}
+              loop={true}
+              modules={[EffectFade, Navigation, Autoplay]}
+              className="mySwiperDesktop"
+            >
+              {projects.map((project, i) => (
+                <SwiperSlide key={i}>
+                  <ProjectsBgSvg />
+                  <div className="data">
+                    <div className="text-container">
+                      <p className="srno">{project.srno}</p>
+                      <div className="info">
+                        <h4>{project.title}</h4>
+                        <p>{project.desc}</p>
+                        <Link href={project.link} target="_blank">
+                          <Button>Visit</Button>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="img-container">
+                      <Image
+                        src={project.img}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 768px) 600px, (max-width: 1200px) 1000px, 2000px"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       )}

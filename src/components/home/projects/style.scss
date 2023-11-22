@@ -127,6 +127,8 @@
     padding: 80px 4vw;
 
     .svg-container {
+      width: 100%;
+
       .title-container {
         margin-left: 4vw;
         width: 153px;
@@ -154,12 +156,36 @@
       flex-direction: column;
       gap: 50px;
 
-      .data-container {
-        position: relative;
+      .mySwiperDesktop {
+        width: 100%;
+        height: 100%;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          color: $pista;
+          opacity: 0.75;
+
+          &::after {
+            display: grid;
+            place-content: center;
+            position: absolute;
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+
+          &:hover {
+            color: $blue;
+          }
+        }
+
+        svg {
+          width: 100%;
+        }
 
         .data {
           position: absolute;
           top: 0;
+          left: 0;
           height: 100%;
           width: 100%;
 
@@ -169,6 +195,7 @@
           padding: 0 4vw 0 6vw;
 
           .text-container {
+            width: 500px;
             display: flex;
             gap: 30%;
 
@@ -181,7 +208,8 @@
               display: flex;
               flex-direction: column;
               gap: 10px;
-              width: 30%;
+              width: 40%;
+              height: 160px;
 
               h4 {
                 font-size: 1.4rem;
@@ -196,7 +224,7 @@
               }
 
               button {
-                margin-top: 20px;
+                margin-top: 10px;
               }
             }
           }
@@ -217,14 +245,16 @@
 @media screen and (min-width: 1025px) {
   #projects {
     .data-main {
-      .data-container {
+      .mySwiperDesktop {
         .data {
           .text-container {
+            width: 600px;
             .srno {
               font-size: 3.4rem;
             }
 
             .info {
+              height: 250px;
               width: 45%;
               h4 {
                 font-size: 2.4rem;
@@ -238,7 +268,7 @@
           }
 
           .img-container {
-            width: 65vw;
+            max-width: 450px;
           }
         }
       }
