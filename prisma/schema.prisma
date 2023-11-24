@@ -12,9 +12,18 @@ datasource db {
 
 // user 
 model User {
-  id       String @id @default(uuid())
+  id       String  @id @default(uuid())
   email    String
   password String
+  role     String
+  audit    audit[]
+}
+
+model audit {
+  id     String @id @default(uuid())
+  log    String
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
 }
 
 //End user
