@@ -24,25 +24,6 @@ const Projects = () => {
       {isMobile ? (
         <div className="projects-mobile">
           <h3>projects</h3>
-          {/* {projects.map((project, index) => (
-            <div key={index} className="data-container">
-              <p className="srno">{project.srno}</p>
-              <h4>{project.title}</h4>
-              <p>{project.desc}</p>
-              <div className="img-container">
-                <Image
-                  src={project.img}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 600px, (max-width: 1200px) 1000px, 2000px"
-                  loading="lazy"
-                />
-              </div>
-              <Link href={project.link} target="_blank">
-                <Button>Visit</Button>
-              </Link>
-            </div>
-          ))} */}
 
           <Swiper
             effect={"fade"}
@@ -86,32 +67,6 @@ const Projects = () => {
             <h3>projects</h3>
           </div>
           <div className="data-main">
-            {/* {projects.map((project, index) => (
-              <div key={index} className="data-container">
-                <ProjectsBgSvg />
-                <div className="data">
-                  <div className="text-container">
-                    <p className="srno">{project.srno}</p>
-                    <div className="info">
-                      <h4>{project.title}</h4>
-                      <p>{project.desc}</p>
-                      <Link href={project.link} target="_blank">
-                        <Button>Visit</Button>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="img-container">
-                    <Image
-                      src={project.img}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 768px) 600px, (max-width: 1200px) 1000px, 2000px"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            ))} */}
             <Swiper
               effect={"fade"}
               navigation={true}
